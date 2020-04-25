@@ -1,0 +1,72 @@
+  /* ---------------------
+        GENERAL
+--------------------- */
+body {
+  font-family     : mainFontRegular;
+  line-height: 1.3;
+  background-color: #fff;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin : 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+
+[class^="col-"],
+[class*=" col-"] {
+  padding-right: 0;
+  padding-left : 0;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+  /* ---------------------
+      IMPORT FILES
+------------------------- */
+
+
+  @import"variables";
+  @import"./font";
+  @import"layout";
+  @import"user-conversition";
+  @import"user-list";
+  @import"action-box";
+
+
+  /* ------------------
+        FONTS
+--------------------- */
+
+  @font-face {
+    font-family: mainFontRegular;
+    src        : url("../fonts/Gotham-Book.ttf"), url("../fonts/Gotham-Book.eot") format("embedded-opentype"), url("../fonts/Gotham-Book.woff2") format("woff2"), url("../fonts/Gotham-Book.woff") format("woff"), url("../fonts/Gotham-Book.ttf") format("truetype"), url("../fonts/Gotham-Book.svg") format("svg");
+  }
+
+  @font-face {
+    font-family: mainFontMedium;
+    src        : url("../fonts/Gotham-Medium.TTF"), url("../fonts/Gotham-Medium.eot") format("embedded-opentype"), url("../fonts/Gotham-Medium.woff2") format("woff2"), url("../fonts/Gotham-Medium.woff") format("woff"), url("../fonts/Gotham-Medium.ttf") format("truetype"), url("../fonts/Gotham-Medium.svg") format("svg");
+  }
+
+  @font-face {
+    font-family: mainFontMediumItalic;
+    src        : url("../fonts/GothamXNarrow-MediumItalic.TTF"), url("../fonts/GothamXNarrow-MediumItalic.eot") format("embedded-opentype"), url("../fonts/GothamXNarrow-MediumItalic.woff2") format("woff2"), url("../fonts/GothamXNarrow-MediumItalic.woff") format("woff"), url("../fonts/GothamXNarrow-MediumItalic.ttf") format("truetype"), url("../fonts/GothamXNarrow-MediumItalic.svg") format("svg");
+  }

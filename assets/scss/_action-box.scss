@@ -1,0 +1,34 @@
+.action-box {
+    background-color: $BG;
+    z-index: 9999;
+    &__wrapper {
+        display       : flex;
+        flex-direction: column;
+        height        : 100%;
+
+        li {
+            padding: 16px;
+            width  : 60px;
+
+            &.active , &:hover{
+                background-color: $hoverColor;
+            }
+
+            &:first-child {
+                padding: 14px;
+
+                img {
+                    filter: drop-shadow(0 0 0.75rem #fff);
+                }
+            }
+
+            &:nth-child(3) {
+                padding: 18px;
+            }
+
+            &:last-child {
+                margin-top: auto;
+            }
+        }
+    }
+}
