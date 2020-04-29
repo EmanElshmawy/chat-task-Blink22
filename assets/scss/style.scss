@@ -45,7 +45,8 @@ a[data-toggle="collapse"] {
 
 
   @import"variables";
-  @import"./font";
+  @import"font";
+  @import"mixin"; 
   @import"layout";
   @import"user-conversition";
   @import"user-list";

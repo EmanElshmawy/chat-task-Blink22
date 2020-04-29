@@ -9,8 +9,8 @@
 
     p {
         @include subtitle();
-        padding: 0;
-        margin : 0;
+        padding    : 0;
+        margin     : 0;
         line-height: 35px;
     }
 
@@ -33,10 +33,12 @@
     &__msg {
         position     : relative;
         width        : 100%;
-        padding      : 22px 16px;
+        padding      : 14px 16px;
         cursor       : pointer;
         border-bottom: 1px solid $highlight;
-
+        font-size    : 0;
+        @include transition-duration(0.1s);
+        @include transition-timing-function(ease-in-out);
         &:after {
             position : absolute;
             bottom   : 0;
@@ -51,6 +53,8 @@
         &.active,
         &:hover {
             background-color: $grey;
+            @include transition-duration(0.1s);
+            @include transition-timing-function(ease-in-out);
             &:after {
                 display: none;
             }
@@ -65,9 +69,11 @@
             img {
                 border: 3px solid $darkGreen;
             }
-            .msg-title{
+
+            .msg-title {
                 font-family: mainFontMedium !important;
             }
+
             .user-list__item__date {
 
                 .badge {
@@ -97,12 +103,12 @@
 
             .msg-title {
                 @include msgTitle();
-                color: $text;
+                color         : $text;
                 text-transform: capitalize;
             }
 
             .name {
-                color: $text;
+                color         : $text;
                 text-transform: capitalize;
                 @include msgName();
             }
@@ -115,7 +121,7 @@
                 width        : 80%;
                 white-space  : nowrap;
                 text-overflow: ellipsis;
-                color        :  $text-07;
+                color        : $text-07;
             }
         }
 
@@ -134,12 +140,12 @@
                 border-radius   : 14px;
                 font-size       : 11px;
                 font-weight     : 100;
-                margin: 0;
+                margin          : 0;
             }
 
             .date {
                 @include dateText();
-                color:  $text-07;
+                color        : $text-07;
                 margin-bottom: auto;
             }
 

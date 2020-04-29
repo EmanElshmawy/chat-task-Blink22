@@ -1,19 +1,40 @@
 @mixin subtitle {
-    font-size: 13px;
+    font-size  : 13px;
     font-family: mainFontMedium;
 }
 
 @mixin dateText {
-    font-size: 11px;
+    font-family: mainFontRegular;
+    font-size  : 11px;
 }
 
 @mixin msgTitle {
-    font-size: 13px;
+    font-family: mainFontRegular;
+    font-size  : 13px;
 }
-@mixin msgName{
+
+@mixin msgName {
     font-family: mainFontMediumItalic;
-    font-size: 13px;
+    font-size  : 13px;
 }
-@mixin msgprev{
-    font-size: 12px;
+
+@mixin msgprev {
+    font-family: mainFontRegular;
+    font-size  : 12px;
+}
+
+@mixin msgtext {
+    font-family: mainFontRegular;
+    font-size  : 12px;
+    line-height: 1;
+}
+
+@mixin smallText {
+    font-family: mainFontRegular;
+    font-size  : 10px;
+}
+
+@mixin btnText {
+    font-family: mainFontRegular;
+    font-size  : 16px;
 }

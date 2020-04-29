@@ -15,7 +15,7 @@
 
     &__actionBar {
         width           : 100%;
-        padding         : 14px 20px;
+        padding         : 0 0 0 14px;
         background-color: $BG;
         display         : flex;
         align-items     : center;
@@ -37,8 +37,21 @@
             margin : 0;
 
             li {
-                width      : 20px;
-                margin-left: 30px;
+
+                padding: 14px 16px;
+                @include transition-duration(0.2s);
+                @include transition-timing-function(ease-in-out);
+                &.active,
+                &:hover {
+                    background-color: $hoverColor;
+                    cursor: pointer;
+                    @include transition-duration(0.2s);
+                    @include transition-timing-function(ease-in-out);
+                }
+
+                img {
+                    width: 20px !important;
+                }
             }
         }
 
@@ -61,7 +74,7 @@
     }
 
     &__chat-wrapper {
-        height          : 100%;
+        height          : 80%;
         width           : 100%;
         padding-bottom  : 130px;
         position        : relative;
@@ -70,7 +83,6 @@
 
         @media(max-width: 992px) {
             padding-bottom: 100px;
-
         }
     }
 
@@ -78,7 +90,7 @@
         display        : none;
         overflow-y     : auto;
         overflow-x     : hidden;
-        padding        : 15px 35px;
+        padding        : 15px 35px 15px 25px;
         border         : 0px;
         border-style   : solid;
         justify-content: flex-end;
@@ -107,21 +119,27 @@
 
 
         .bubble {
+            margin-bottom: 20px;
+
             .text {
                 position      : relative;
                 display       : inline-block;
                 clear         : both;
-                margin-bottom : 8px;
-                padding       : 13px 14px;
+                padding       : 16px 20px;
                 vertical-align: top;
                 font-size     : 14px;
-                max-width     : 80%;
+                max-width     : 64%;
                 word-wrap     : break-word;
-                border-radius : 5px;
+                border-radius : 15px;
                 word-break    : break-word;
 
                 @media (max-width: 991px) {
                     font-size: 14px;
+                    max-width: 80%;
+                }
+
+                @media (max-width: 420px) {
+                    max-width: 90%;
                 }
 
                 &:before {
@@ -133,59 +151,194 @@
                     content      : '\00a0';
                     transform    : rotate(80deg) skew(-41deg);
                     border-radius: 0px 0px 0px 5px;
+
                 }
             }
 
             .time {
-                font-size: 12px;
-                color    : #bdbfc0;
-                position : relative;
-                top      : 1rem;
+                @include msgprev();
+                color          : #bdbfc0;
+                position       : relative;
+                max-width      : 70%;
+                /* top         : 10px; */
+                display        : flex;
+                justify-content: space-between;
+                align-items    : center;
 
-                @media (max-width: 950px) {
-                    display: none;
+                @media (max-width: 991px) {
+                    max-width: 86%;
+                }
+
+                .msg-details_user {
+                    display    : flex;
+                    align-items: center;
+
+                    img {
+                        width        : 30px;
+                        height       : 30px;
+                        border-radius: 50%;
+                        margin-left  : 10px;
+
+                    }
+
+                    .content {
+                        text-align: right;
+                    }
                 }
             }
 
             &.you {
                 .text {
-                    float           : left;
+                    display         : block;
+                    margin-right    : auto;
                     color           : $text;
                     background-color: $pale_grey;
                     align-self      : flex-start;
                     animation-name  : slideFromLeft;
+                    position        : relative;
+                    margin-left     : 6%;
 
                     &:before {
-                        left            : -5px;
+                        left            : -8px;
                         background-color: $pale_grey;
+                        top             : 85%;
+                        transform       : rotate(140deg) skew(53deg);
+                        z-index         : 1;
+                        position        : absolute;
+                        background-color: #f0f3f9;
+                        border-radius   : 10px;
                     }
                 }
 
                 .time {
-                    float: left;
-                    left : 1rem;
+                    margin-right: auto;
+                    direction   : rtl;
+
+                    .msg-details_user {
+
+                        img {
+                            margin      : 0;
+                            margin-right: 10px;
+                        }
+                    }
                 }
             }
 
             &.me {
                 .text {
-                    float           : right;
+                    display         : block;
+                    margin-left     : auto;
                     background-color: $pale_grey_two;
                     align-self      : flex-end;
                     animation-name  : slideFromRight;
+                    margin-right    : 6%;
 
                     &:before {
                         width           : 13px;
                         top             : 9px;
-                        transform       : rotate(180deg) skew(-41deg);
+                        transform       : rotate(190deg) skew(50deg);
                         background-color: $pale_grey_two;
+                        width           : 13px;
                         right           : -4px;
+                        top             : 92%;
+                        border-radius   : 4px;
                     }
                 }
 
                 .time {
-                    float: right;
-                    right: 1rem;
+                    margin-left: auto;
+                }
+            }
+
+            p {
+                margin: 0;
+                @include msgtext();
+                color      : $gunmetal;
+                line-height: 18.5px;
+            }
+
+            .msg-details_title {
+                margin-bottom: 10px;
+                @include subtitle();
+                color: $gunmetal;
+            }
+
+            .msg-details__date {
+                display      : flex;
+                align-items  : flex-start;
+                margin-bottom: 14px;
+
+                img {
+                    width       : 14px;
+                    margin-right: 10px;
+                }
+
+                .email {
+                    @include smallText();
+                    margin-top: 4px;
+                }
+            }
+
+            .msg-details_content {
+                display      : flex;
+                align-items  : center;
+                margin-bottom: 15px;
+
+                img {
+                    width       : 13px;
+                    margin-right: 11px;
+                }
+            }
+
+            .msg-details_action {
+                display        : flex;
+                justify-content: space-between;
+
+                @media (max-width:580px) {
+                    flex-direction : column;
+                    justify-content: flex-end;
+                }
+
+                img {
+                    width       : 14px;
+                    margin-right: 10px;
+                }
+
+                .icon {
+                    margin-right: 10px;
+                }
+
+                .btn-light {
+                    border-radius: 10px;
+                    color        : $blush;
+                    @include btnText();
+                    cursor: pointer;
+
+                    @media (max-width:580px) {
+                        margin-bottom: 15px;
+                    }
+
+                    img {
+                        width      : 14px;
+                        margin-left: 10px;
+                    }
+                }
+
+                .msg-details_user {
+                    display: flex;
+
+                    img {
+                        width        : 30px;
+                        height       : 30px;
+                        border-radius: 50%;
+                        margin-left  : 10px;
+                    }
+
+                    .content {
+                        text-align: right;
+                        @include msgprev();
+                        color: $gunmetal;
+                    }
                 }
             }
         }
@@ -204,7 +357,7 @@
         &__image-wrapper {
             width   : 35px;
             position: relative;
-
+            cursor: pointer;
             img {
                 position        : relative;
                 z-index         : 2;
@@ -222,6 +375,7 @@
                 left    : 0;
                 top     : 0;
                 right   : 0;
+        
             }
         }
 
@@ -233,6 +387,19 @@
 
     .btn-wrapper {
         width: 30px;
+        cursor: pointer;
+    }
+
+    .plan-alert {
+        @include subtitle();
+        color: $gunmetal;
+
+        .time {
+            @include msgprev();
+            color      : #bdbfc0;
+            position   : relative;
+            margin-left: 15px;
+        }
     }
 }
 

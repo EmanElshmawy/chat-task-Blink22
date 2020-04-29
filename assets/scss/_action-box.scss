@@ -9,9 +9,13 @@
         li {
             padding: 16px;
             width  : 60px;
-
+            @include transition-duration(0.2s);
+            @include transition-timing-function(ease-in-out);
             &.active , &:hover{
                 background-color: $hoverColor;
+                cursor: pointer;
+                @include transition-duration(0.2s);
+                @include transition-timing-function(ease-in-out);
             }
 
             &:first-child {
