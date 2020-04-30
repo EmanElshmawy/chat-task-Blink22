@@ -144,7 +144,7 @@
                 }
 
                 @media (max-width: 520px) {
-                    max-width    : 90%;
+                    max-width: 90%;
                 }
 
                 &:before {
@@ -183,7 +183,7 @@
                         width        : 30px;
                         height       : 30px;
                         border-radius: 50%;
-                        margin-left  : 10px;
+                        margin-left  : 15px;
 
                     }
 
@@ -233,7 +233,7 @@
 
                         img {
                             margin      : 0;
-                            margin-right: 10px;
+                            margin-right: 15px;
                         }
                     }
                 }
@@ -251,9 +251,30 @@
                     }
 
                     .time {
-                        max-width: 89.5%;
+                        max-width: 89%;
                     }
                 }
+
+                &.event-details {
+                    .text {
+                        width: 60%;
+                        .msg-details_title{
+                            @include eventTitle();
+                        }
+                        .msg-details__date {
+                            margin-bottom: 0px !important;
+
+                            img {
+                                margin-right: 20px !important;
+                            }
+                        }
+                    }
+
+                    .time {
+                        max-width: 66%;
+                    }
+                }
+
             }
 
             &.me {
@@ -288,7 +309,7 @@
                     }
 
                     .time {
-                        max-width: 89.5%;
+                        max-width: 89%;
                     }
                 }
 
@@ -314,7 +335,7 @@
                 display      : flex;
                 align-items  : flex-start;
                 margin-bottom: 6px;
-                padding: 0 2px;
+                padding      : 0 2px;
 
                 img {
                     width       : 14px;
@@ -359,22 +380,23 @@
 
                 .icon {
                     margin-right: 12px;
-                    margin-left: -2px;
+                    margin-left : -2px;
                 }
 
                 .btn-light {
                     border-radius: 10px;
                     color        : $blush;
                     @include btnText();
-                    cursor: pointer;
+                    cursor : pointer;
                     padding: 0 24px;
+
                     @media (max-width:580px) {
                         margin-bottom: 15px;
-                        padding: 0 15px;
+                        padding      : 0 15px;
                     }
 
                     img {
-                        width      : 14px;
+                        width : 14px;
                         margin: 0 20px 0 0;
                     }
                 }
@@ -414,7 +436,8 @@
         position        : absolute;
         bottom          : 0;
         width           : 100%;
-        z-index: 99;
+        z-index         : 99;
+
         .form-control {
             border       : 0px solid #ced4da;
             border-radius: 10px;
