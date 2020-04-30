@@ -136,6 +136,9 @@ a[data-toggle="collapse"] {
     background-color: #5cafb5;
     display: flex;
     align-items: center; }
+    @media (max-width: 520px) {
+      .user-conversition__actionBar {
+        padding: 14px 16px; } }
     .user-conversition__actionBar .title {
       font-size: 13px;
       font-family: mainFontMedium;
@@ -146,6 +149,9 @@ a[data-toggle="collapse"] {
     .user-conversition__actionBar .setting {
       display: flex;
       margin: 0; }
+      @media (max-width: 520px) {
+        .user-conversition__actionBar .setting {
+          display: none; } }
       .user-conversition__actionBar .setting li {
         padding: 14px 16px;
         -moz-transition-duration: 0.2s;
@@ -259,11 +265,11 @@ a[data-toggle="collapse"] {
         word-break: break-word; }
         @media (max-width: 991px) {
           .user-conversition__chat-box .bubble .text {
-            max-width: 80%; } }
+            max-width: 80%;
+            margin-bottom: 12px; } }
         @media (max-width: 520px) {
           .user-conversition__chat-box .bubble .text {
-            max-width: 90%;
-            margin-bottom: 15px; } }
+            max-width: 90%; } }
         .user-conversition__chat-box .bubble .text:before {
           position: absolute;
           top: 2px;
@@ -443,7 +449,8 @@ a[data-toggle="collapse"] {
     background-color: #f0f0f0;
     position: absolute;
     bottom: 0;
-    width: 100%; }
+    width: 100%;
+    z-index: 99; }
     .user-conversition .messageInput .form-control {
       border: 0px solid #ced4da;
       border-radius: 10px; }

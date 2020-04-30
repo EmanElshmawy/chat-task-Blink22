@@ -20,6 +20,10 @@
         display         : flex;
         align-items     : center;
 
+        @media(max-width:520px) {
+            padding: 14px 16px;
+        }
+
         .title {
             @include subtitle();
             padding     : 0;
@@ -31,6 +35,10 @@
         .setting {
             display: flex;
             margin : 0;
+
+            @media(max-width:520px) {
+                display: none;
+            }
 
             li {
 
@@ -80,7 +88,7 @@
 
         @media(max-width: 992px) {
             padding-bottom: 100px;
-            height          : 80%;
+            height        : 80%;
         }
     }
 
@@ -131,12 +139,12 @@
                 word-break    : break-word;
 
                 @media (max-width: 991px) {
-                    max-width: 80%;
+                    max-width    : 80%;
+                    margin-bottom: 12px;
                 }
 
                 @media (max-width: 520px) {
-                    max-width: 90%;
-                    margin-bottom: 15px;
+                    max-width    : 90%;
                 }
 
                 &:before {
@@ -403,7 +411,7 @@
         position        : absolute;
         bottom          : 0;
         width           : 100%;
-
+        z-index: 99;
         .form-control {
             border       : 0px solid #ced4da;
             border-radius: 10px;
