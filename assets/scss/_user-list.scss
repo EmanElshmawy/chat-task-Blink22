@@ -22,7 +22,9 @@
 
 .user-list {
     height: 90%;
-
+    @media(max-width:400px){
+        width: 240px;
+    }
     &__wrapper {
         padding   : 0px;
         height    : 100%;

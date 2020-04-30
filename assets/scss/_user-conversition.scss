@@ -314,6 +314,7 @@
                 display      : flex;
                 align-items  : flex-start;
                 margin-bottom: 6px;
+                padding: 0 2px;
 
                 img {
                     width       : 14px;
@@ -353,11 +354,12 @@
 
                 img {
                     width       : 14px;
-                    margin-right: 10px;
+                    margin-right: 12px;
                 }
 
                 .icon {
-                    margin-right: 10px;
+                    margin-right: 12px;
+                    margin-left: -2px;
                 }
 
                 .btn-light {
@@ -365,14 +367,15 @@
                     color        : $blush;
                     @include btnText();
                     cursor: pointer;
-
+                    padding: 0 24px;
                     @media (max-width:580px) {
                         margin-bottom: 15px;
+                        padding: 0 15px;
                     }
 
                     img {
                         width      : 14px;
-                        margin-left: 10px;
+                        margin: 0 20px 0 0;
                     }
                 }
 
@@ -415,6 +418,7 @@
         .form-control {
             border       : 0px solid #ced4da;
             border-radius: 10px;
+            @include msgTitle();
         }
 
         &__image-wrapper {
