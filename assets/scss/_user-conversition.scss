@@ -20,10 +20,6 @@
         display         : flex;
         align-items     : center;
 
-        @media(max-width:992px) {
-            padding: 9px 20px;
-        }
-
         .title {
             @include subtitle();
             padding     : 0;
@@ -41,10 +37,11 @@
                 padding: 14px 16px;
                 @include transition-duration(0.2s);
                 @include transition-timing-function(ease-in-out);
+
                 &.active,
                 &:hover {
                     background-color: $hoverColor;
-                    cursor: pointer;
+                    cursor          : pointer;
                     @include transition-duration(0.2s);
                     @include transition-timing-function(ease-in-out);
                 }
@@ -74,15 +71,16 @@
     }
 
     &__chat-wrapper {
-        height          : 80%;
+        height          : 80.9%;
         width           : 100%;
-        padding-bottom  : 130px;
+        padding-bottom  : 100px;
         position        : relative;
         overflow-y      : auto;
         background-color: white;
 
         @media(max-width: 992px) {
             padding-bottom: 100px;
+            height          : 80%;
         }
     }
 
@@ -119,7 +117,7 @@
 
 
         .bubble {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
 
             .text {
                 position      : relative;
@@ -127,19 +125,18 @@
                 clear         : both;
                 padding       : 16px 20px;
                 vertical-align: top;
-                font-size     : 14px;
                 max-width     : 64%;
                 word-wrap     : break-word;
                 border-radius : 15px;
                 word-break    : break-word;
 
                 @media (max-width: 991px) {
-                    font-size: 14px;
                     max-width: 80%;
                 }
 
-                @media (max-width: 420px) {
+                @media (max-width: 520px) {
                     max-width: 90%;
+                    margin-bottom: 15px;
                 }
 
                 &:before {
@@ -172,6 +169,7 @@
                 .msg-details_user {
                     display    : flex;
                     align-items: center;
+                    color      : $gunmetal !important;
 
                     img {
                         width        : 30px;
@@ -184,6 +182,15 @@
                     .content {
                         text-align: right;
                     }
+
+                    .date {
+                        color: $gunmetal !important;
+                    }
+                }
+
+                .user {
+                    font-family: mainFontMedium;
+                    color      : $gunmetal !important;
                 }
             }
 
@@ -222,6 +229,23 @@
                         }
                     }
                 }
+
+                &.info-message {
+                    .text {
+                        max-width       : 83%;
+                        background-color: $white_two;
+
+                        &:before {
+                            background-color: $white_two;
+                            transform       : rotate(164deg) skew(-50deg);
+                            left            : 0px;
+                        }
+                    }
+
+                    .time {
+                        max-width: 89.5%;
+                    }
+                }
             }
 
             &.me {
@@ -242,6 +266,21 @@
                         right           : -4px;
                         top             : 92%;
                         border-radius   : 4px;
+                    }
+                }
+
+                &.info-message {
+                    .text {
+                        background-color: $grey_two;
+                        max-width       : 83%;
+
+                        &:before {
+                            background-color: $grey_two;
+                        }
+                    }
+
+                    .time {
+                        max-width: 89.5%;
                     }
                 }
 
@@ -266,7 +305,7 @@
             .msg-details__date {
                 display      : flex;
                 align-items  : flex-start;
-                margin-bottom: 14px;
+                margin-bottom: 6px;
 
                 img {
                     width       : 14px;
@@ -275,7 +314,6 @@
 
                 .email {
                     @include smallText();
-                    margin-top: 4px;
                 }
             }
 
@@ -297,6 +335,12 @@
                 @media (max-width:580px) {
                     flex-direction : column;
                     justify-content: flex-end;
+                }
+
+                .textInfo {
+                    @include boldRegularText();
+                    color : $gunmetal;
+                    cursor: pointer;
                 }
 
                 img {
@@ -324,6 +368,12 @@
                     }
                 }
 
+                .content {
+                    text-align: right;
+                    @include msgprev();
+                    color: $gunmetal;
+                }
+
                 .msg-details_user {
                     display: flex;
 
@@ -334,11 +384,11 @@
                         margin-left  : 10px;
                     }
 
-                    .content {
-                        text-align: right;
-                        @include msgprev();
-                        color: $gunmetal;
+                    p,
+                    span {
+                        @include smallItalicRegular();
                     }
+
                 }
             }
         }
@@ -354,10 +404,16 @@
         bottom          : 0;
         width           : 100%;
 
+        .form-control {
+            border       : 0px solid #ced4da;
+            border-radius: 10px;
+        }
+
         &__image-wrapper {
             width   : 35px;
             position: relative;
-            cursor: pointer;
+            cursor  : pointer;
+
             img {
                 position        : relative;
                 z-index         : 2;
@@ -375,7 +431,7 @@
                 left    : 0;
                 top     : 0;
                 right   : 0;
-        
+
             }
         }
 
@@ -386,7 +442,7 @@
     }
 
     .btn-wrapper {
-        width: 30px;
+        width : 30px;
         cursor: pointer;
     }
 

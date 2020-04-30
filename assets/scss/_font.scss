@@ -38,3 +38,14 @@
     font-family: mainFontRegular;
     font-size  : 16px;
 }
+
+@mixin smallItalicRegular {
+    font-family: mainFontRegular;
+    font-size  : 11px;
+    font-style: italic;
+}
+
+@mixin boldRegularText{
+    font-size: 12.5px;
+    font-family: mainFontMedium;
+}
